@@ -2,14 +2,14 @@ import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
 
 let state = (set) => ({
-  taskList: '',
-  setTaskList: (data) => set(() => ({
-    taskList: data,
+  theme: "default",
+  setTheme: (data) => set(() => ({
+    theme: data,
   })),
 });
 
-state = persist(state, { name: 'Zira', getStorage: () => localStorage });
+state = persist(state, { name: 'ZIBRA', getStorage: () => localStorage });
 
-const useStore = create(devtools(state));
+const useStorage = create(devtools(state));
 
-export default useStore;
+export default useStorage;

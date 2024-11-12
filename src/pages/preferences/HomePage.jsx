@@ -1,6 +1,6 @@
 import React from 'react'
 import TwoColumnLayout from "../../components/shared/layout/TwoColumnLayout"
-import Home from "../../components/home/Home"
+import Home from "../../components/preferences/Home"
 
 const HomePage = () => {
   return (

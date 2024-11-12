@@ -11,7 +11,7 @@ const Container = styled.button`
   padding: 1rem 2.5rem;
   font-size: 1.4rem;
   font-weight: 500;
-  border-radius: 0.2rem;
+  border-radius: 0.5rem;
   &.gray {
     background-color: #efefef;
   }

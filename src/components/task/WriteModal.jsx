@@ -18,8 +18,8 @@ const Write = ({ setVisibleWriteModal }) => {
     const newTask = {
       id: taskList.length + 1,
       title: inputTitleRef.current.value,
-      start: new Date(inputStartDateRef.current.value),
-      end: new Date(inputEndDateRef.current.value),
+      start: inputStartDateRef.current.value,
+      end: inputEndDateRef.current.value,
       isDone: false,
     }
 

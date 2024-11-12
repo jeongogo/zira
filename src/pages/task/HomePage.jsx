@@ -1,19 +1,29 @@
-import React, { useState } from 'react'
-import useStorage from "../../store/storage"
-import BasicTheme from "../../components/shared/theme/BasicTheme"
-import WriteButton from "../../components/task/WriteButton";
-import WriteModal from "../../components/task/WriteModal";
+import React, { useEffect, useState } from 'react'
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase";
+import TwoColumnLayout from "../../components/shared/layout/TwoColumnLayout"
 import PageTitle from "../../components/shared/common/PageTitle";
 import Task from "../../components/task/Task";
 import Sort from "../../components/task/Sort";
 
 const HomePage = () => {
-  const taskList = useStorage((state) => state.taskList);
-  const setTaskList = useStorage((state) => state.setTaskList);
-  const [visibleWriteModal, setVisibleWriteModal] = useState(false);
+  const [taskList, setTaskList] = useState([]);
+
+  const handleGetTasks = async () => {
+    const querySnapshot = await getDocs(collection(db, "tasks"));
+    const tasks = [];
+    querySnapshot.forEach((doc) => {
+      tasks.push({ id: doc.id, ...doc.data() });
+    });
+    setTaskList(tasks);
+  }
+
+  useEffect(() => {
+    handleGetTasks();
+  }, []);
   
   return (
-    <BasicTheme>
+    <TwoColumnLayout>
       <PageTitle>할 일 목록</PageTitle>
       <hr />
       {/* <Sort /> */}
@@ -24,9 +34,7 @@ const HomePage = () => {
           ))}
         </div>
       }
-      <WriteButton setVisibleWriteModal={setVisibleWriteModal} />
-      {visibleWriteModal && <WriteModal setVisibleWriteModal={setVisibleWriteModal} />}
-    </BasicTheme>
+    </TwoColumnLayout>
   )
 }
 

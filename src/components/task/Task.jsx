@@ -1,36 +1,23 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 import moment from "moment";
 import styled from "styled-components";
-import useStorage from "../../store/storage";
 
 const Task = ({ item }) => {
-  const taskList = useStorage((state) => state.taskList);
-  const setTaskList = useStorage((state) => state.setTaskList);
-
-  const onChange = (e) => {
-    const newTaskList = taskList.map((task) => {
-      if (task.id === item.id) {
-        return {
-          ...task,
-          isDone: e.target.checked,
-        }
-      } else {
-        return task;
-      }
-    });
-
-    setTaskList(newTaskList);
-  }
-
+  const navigate = useNavigate();
+  
   return (
-    <Container className={item.isDone ? "done" : ""}>
-      <div className="title">{item.title}</div>
-      <div className="date">
-        {moment(item.start).format('YYYY-MM-DD')} ~ {moment(item.end).format('YYYY-MM-DD')}
+    <Container className={item.status}>
+      <div className="title" onClick={() => navigate(`/task/${item.id}`)}>{item.title}</div>
+      <div className="status">
+        {item.status === "pending" && "대기"}
+        {item.status === "onHold" && "보류"}
+        {item.status === "inProgress" && "진행중"}
+        {item.status === "review" && "결과검토"}
+        {item.status === "completed" && "완료"}
       </div>
-      <div className="buttons">
-        <input type="checkbox" id={item.id} checked={item.isDone} onChange={onChange} />
-      </div>
+      <div className="date">{moment(new Date(item.startDate.seconds*1000)).format('YYYY-MM-DD')}</div>
+      <div className="date">{moment(item.endDate.seconds*1000).format('YYYY-MM-DD')}</div>
     </Container>
   )
 }
@@ -41,11 +28,32 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 5rem;
   border-bottom: 1px solid #ccc;
   &:last-of-type {
     border-bottom: 0;
   }
-  &.done {
+  &.pending {
+    &::before {
+      background-color: #ffee58;
+    }
+  }
+  &.onHold {
+    &::before {
+      background-color: #9E9E9E;
+    }
+  }
+  &.inProgress {
+    &::before {
+      background-color: #2196F3;
+    }
+  }
+  &.review {
+    &::before {
+      background-color: #ba68c8;
+    }
+  }
+  &.completed {
     color: #aaa;
     &::before {
       background-color: #ddd;
@@ -59,19 +67,22 @@ const Container = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    width: 3px;
+    width: 5px;
     height: 100%;
-    background-color: dodgerblue;
     transition: all 0.1s;
     z-index: 2;
   }
   .title {
-    max-width: 40vw;
+    max-width: 40rem;
     margin-right: auto;
     font-size: 1.4rem;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   .date {
     display: flex;
