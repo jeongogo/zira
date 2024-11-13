@@ -5,14 +5,14 @@ import SubTitle from "../shared/common/SubTitle";
 const Activity = () => {
   return (
     <Container>
-      <SubTitle>Activity</SubTitle>
+      <SubTitle>활동 로그</SubTitle>
     </Container>
   )
 }
 
 const Container = styled.div`
   height: 100vh;
-  padding: 2rem;
+  padding: 3rem;
   background-color: #fafafa;
   overflow-y: auto;
 `;

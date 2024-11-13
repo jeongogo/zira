@@ -17,7 +17,7 @@ const Attach = () => {
 
 const Container = styled.div`
   margin-top: 3rem;
-  padding-bottom: 3rem;
+  padding-bottom: 4rem;
   border-bottom: 1px solid #ededed;
   .drop {
     display: flex;

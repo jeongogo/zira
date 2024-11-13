@@ -15,7 +15,7 @@ const TwoColumnLayout = ({ children }) => {
 
 const Container = styled.div`
   display: flex;
-  padding-left: 20rem;
+  padding-left: 22rem;
   .content-area {
     position: relative;
     width: 100%;

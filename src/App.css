@@ -18,6 +18,16 @@ body.no-scroll::-webkit-scrollbar {
   display: none;
 }
 
+/**----------------- Color ------------------**/
+
+:root {
+  --status-pending: #ffee58;
+  --status-inProgress: #2196F3;
+  --status-review: #ba68c8;
+  --status-completed: #dddddd;
+  --status-onHold: #9E9E9E;
+}
+
 /**--------------- Scroll Bar ----------------**/
 body::-webkit-scrollbar { width: 5px; }
 body::-webkit-scrollbar-track { background-color: transparent; }
@@ -76,7 +86,6 @@ mark {
   font-weight: inherit;
 }
 
-
 /**----------------- Input ------------------**/
 input::placeholder,
 textarea::placeholder {
@@ -97,6 +106,7 @@ input[type="date"],
 select, textarea {
   width: 100%;
   height: 4.2rem;
+  margin: 0;
   padding: 0 1rem;
   font-size: 1.4rem;
   color: #333;

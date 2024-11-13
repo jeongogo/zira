@@ -35,28 +35,28 @@ const Container = styled.div`
   }
   &.pending {
     &::before {
-      background-color: #ffee58;
+      background-color: var(--status-pending);
     }
   }
   &.onHold {
     &::before {
-      background-color: #9E9E9E;
+      background-color: var(--status-onHold);
     }
   }
   &.inProgress {
     &::before {
-      background-color: #2196F3;
+      background-color: var(--status-inProgress);
     }
   }
   &.review {
     &::before {
-      background-color: #ba68c8;
+      background-color: var(--status-review);
     }
   }
   &.completed {
     color: #aaa;
     &::before {
-      background-color: #ddd;
+      background-color: var(--status-completed);
     }
     .date {
       color: #aaa;

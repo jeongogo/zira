@@ -81,7 +81,7 @@ const Container = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 20rem;
+  width: 22rem;
   user-select: none;
   flex-shrink: 0;
   ul {

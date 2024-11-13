@@ -61,7 +61,7 @@ const Container = styled.li`
   .thumbnail {
     width: 4rem;
     height: 4rem;
-    margin-right: 0.7rem;
+    margin-right: 0.8rem;
     border: 1px solid #ededed;
     border-radius: 50%;
     flex-shrink: 0;

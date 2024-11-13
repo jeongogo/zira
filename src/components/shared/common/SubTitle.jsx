@@ -11,7 +11,7 @@ const Container = styled.h2`
   font-size: 1.9rem;
   font-weight: 500;
   flex-shrink: 0;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.9rem;
   .require {
     color: crimson;
   }

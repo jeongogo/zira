@@ -25,7 +25,8 @@ const Assignment = ({ onDrop, assignUsers, onRemoveUser }) => {
         className="list"
         style={{
           backgroundColor: isOver ? "#f0f0f0" : assignUsers?.length ? "#fff" : "#fafafa",
-          borderRadius: '0.5rem'
+          borderRadius: '0.5rem',
+          minHeight: assignUsers?.length ? "8rem" : "15rem"
         }}
       >
         {assignUsers.map((user, index) => (
@@ -48,7 +49,6 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    min-height: 10rem;
     gap: 2rem;
     .assign-user {
       display: flex;
@@ -64,7 +64,7 @@ const Container = styled.div`
         position: relative;
         width: 4rem;
         height: 4rem;
-        margin-right: 0.7rem;
+        margin-right: 0.8rem;
         border: 1px solid #ededed;
         border-radius: 50%;
         overflow: hidden;

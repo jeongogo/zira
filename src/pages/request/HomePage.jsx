@@ -88,8 +88,12 @@ const HomePage = () => {
         endDate: new window.Date(endDateRef.current.value),
         assignUsers,
         attachments: [],
-        status: "pending", /* inProgress, review, completed, onHold */
-        requestor: user,
+        status: "pending",
+        requestor: {
+          uid: user.uid,
+          photoUrl: user.photoUrl ?? 'https://cdn.pixabay.com/photo/2024/02/23/23/58/dog-8593014_640.jpg',
+          displayName: user.displayName ?? 'requestor',
+        },
       }
       const docRef = await addDoc(collection(db, "tasks"), data);
       console.log("Document written with ID: ", docRef.id);

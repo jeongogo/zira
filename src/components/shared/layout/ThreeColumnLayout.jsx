@@ -15,9 +15,10 @@ const ThreeColumnLayout = ({ children, sideWidth }) => {
 
 const Container = styled.div`
   display: flex;
-  padding-left: 20rem;
+  padding-left: 22rem;
   .content-area {
     width: 100%;
+    position: relative;
     &.width-250 {
       .left-wrap {
         padding-right: 28rem;
@@ -32,6 +33,14 @@ const Container = styled.div`
       }
       .right-wrap {
         width: 32rem;
+      }
+    }
+    &.width-350 {
+      .left-wrap {
+        padding-right: 38rem;
+      }
+      .right-wrap {
+        width: 35rem;
       }
     }
     .left-wrap {

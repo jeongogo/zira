@@ -20,10 +20,7 @@ const Home = ({ notificationList }) => {
 
 const Container = styled.div`
   .list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 1rem;
+    
   }
 `;
 

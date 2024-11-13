@@ -14,7 +14,7 @@ const Content = ({ content, setContent }) => {
 const Container = styled.div`
   margin-top: 3rem;
   textarea {
-    height: 20rem;
+    height: 32rem;
   }
 `;
 

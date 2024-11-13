@@ -41,7 +41,7 @@ const Calendar = ({ taskList }) => {
 
 function renderEventContent(eventInfo, navigate) {
   return (
-    <EventContent className={eventInfo.event.extendedProps.isDone ? "done" : ""} onClick={() => navigate(`/task/${eventInfo.event.id}`)}>
+    <EventContent className={eventInfo.event.extendedProps.status} onClick={() => navigate(`/task/${eventInfo.event.id}`)}>
       {eventInfo.event.title}
     </EventContent>
   )
@@ -81,7 +81,7 @@ const Container = styled.div`
     margin-bottom: 1.2rem;
   }
   .fc .fc-daygrid-day.fc-day-today {
-    background-color: #F7FBFF;
+    background-color: #fffde7;
   }
   .fc .fc-daygrid-day-top {
     flex-direction: row;
@@ -95,8 +95,25 @@ const EventContent = styled.div`
   font-size: 1.1rem;
   text-align: center;
   cursor: pointer;
-  &.done {
-    background-color: #ddd;
+  &.pending {
+    color: #222;
+    background-color: var(--status-pending);
+  }
+  &.onHold {
+    color: white;
+    background-color: var(--status-onHold);
+  }
+  &.inProgress {
+    color: white;
+    background-color: var(--status-inProgress);
+  }
+  &.review {
+    color: white;
+    background-color: var(--status-review);
+  }
+  &.completed {
+    color: #666;
+    background-color: var(--status-completed);
   }
 `;
 
