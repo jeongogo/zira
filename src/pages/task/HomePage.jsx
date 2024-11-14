@@ -28,7 +28,7 @@ const HomePage = () => {
       <hr />
       {/* <Sort /> */}
       {taskList.length > 0 &&
-        <div className="table">
+        <div className="list">
           {taskList.map((item) => (
             <Task key={item.id} item={item} />
           ))}

@@ -5,7 +5,7 @@ import PageTitle from "../shared/common/PageTitle";
 const Detail = () => {
   return (
     <Container>
-      <PageTitle>프로젝트 관리</PageTitle>
+      <PageTitle>프로젝트</PageTitle>
     </Container>
   )
 }

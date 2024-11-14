@@ -7,7 +7,7 @@ const Home = ({ projectList, setVisibleWriteModal }) => {
   return (
     <Container>
       <div className="top">
-        <PageTitle>프로젝트 관리</PageTitle>
+        <PageTitle>프로젝트</PageTitle>
         <button className="write-button" onClick={() => setVisibleWriteModal(true)}>등록하기</button>
       </div>
       {projectList?.length > 0 &&

@@ -156,12 +156,6 @@ hr {
   border: none;
 }
 
-.table {
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
-
 .max-content {
   margin: 0 auto;
   max-width: 80rem;

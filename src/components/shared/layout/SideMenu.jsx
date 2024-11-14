@@ -44,6 +44,11 @@ const SideMenu = () => {
           </NavLink>
         </li>
         <li>
+          <NavLink to="/project">
+            <BiFolder style={{ fontSize: "1.6rem", margin: "0 1.1rem 0 0.2rem" }} />프로젝트
+          </NavLink>
+        </li>
+        <li>
           <NavLink to="/notification">
             <BiBell style={{ fontSize: "1.6rem", margin: "0 1.1rem 0 0.2rem" }} />알림
           </NavLink>
@@ -52,11 +57,6 @@ const SideMenu = () => {
         <li>
           <NavLink to="/request">
             <BiFolderPlus style={{ fontSize: "1.6rem", margin: "0 1.1rem 0 0.2rem" }} />업무 요청
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/project">
-            <BiFolder style={{ fontSize: "1.6rem", margin: "0 1.1rem 0 0.2rem" }} />프로젝트 관리
           </NavLink>
         </li>
         <li>

@@ -37,10 +37,8 @@ const Detail = ({ item, handleUpdateStatus }) => {
         </button>
       </div>
       <div className="content">
-        <div className="requestor">
-          {item.requestor.displayName}
-        </div>
-        {item.content}
+        <div className="wrap">{item.content}</div>
+        <div className="requestor">{item.requestor.displayName}</div>
       </div>
       <div className="date">
         <SubTitle>시작/종료일</SubTitle>
@@ -130,7 +128,8 @@ const Container = styled.div`
     border: 1px solid #ccc;
     border-radius: 1rem;
     .requestor {
-      margin-bottom: 1rem;
+      margin-top: 1rem;
+      text-align: right;
     }
   }
   .date {

@@ -24,14 +24,15 @@ const Task = ({ item }) => {
 
 const Container = styled.div`
   position: relative;
-  padding: 1.2rem 2rem;
+  padding: 1.2rem 2.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 5rem;
-  border-bottom: 1px solid #ccc;
-  &:last-of-type {
-    border-bottom: 0;
+  border-bottom: 1px solid #ddd;
+  &:first-of-type {
+    margin-top: 1rem;
+    border-top: 1px solid #ddd;
   }
   &.pending {
     &::before {
@@ -65,10 +66,11 @@ const Container = styled.div`
   &::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 5px;
-    height: 100%;
+    top: 50%;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
     transition: all 0.1s;
     z-index: 2;
   }
